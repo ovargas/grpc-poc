@@ -1,0 +1,21 @@
+version: v1
+plugins:
+- name: go
+  out: ../api
+  opt: paths=source_relative
+- name: go-grpc
+  out: ../api
+  opt: paths=source_relative
+- name: grpc-gateway
+  out: ../api
+  opt:
+  - paths=source_relative
+  - generate_unbound_methods=true
+  - grpc_api_configuration=dummy/v1/service.yaml
+  - allow_repeated_fields_in_body=true
+#- name: openapiv2
+#  out: ../swagger
+#  opt:
+#    - output_format=yaml
+#    - grpc_api_configuration=dummy/v1/service.yaml
+#  strategy: all

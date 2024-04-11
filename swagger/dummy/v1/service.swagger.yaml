@@ -1,0 +1,36 @@
+swagger: "2.0"
+info:
+  title: dummy/v1/service.proto
+  version: version not set
+tags:
+  - name: DummyService
+consumes:
+  - application/json
+produces:
+  - application/json
+paths: {}
+definitions:
+  protobufAny:
+    type: object
+    properties:
+      '@type':
+        type: string
+    additionalProperties: {}
+  rpcStatus:
+    type: object
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string
+      details:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/protobufAny'
+  v1GetDummyResponse:
+    type: object
+    properties:
+      value:
+        type: string

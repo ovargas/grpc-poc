@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package proto.dummy.v1;
+
+option go_package = "grpc-poc/api/dummy;dummyv1";
+
+message GetDummyRequest {
+  string value = 1;
+}
+
+message GetDummyResponse {
+  string value = 1;
+}
+
+service DummyService {
+  rpc GetDummy(GetDummyRequest) returns (GetDummyResponse) {}
+}
